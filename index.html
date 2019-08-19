@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slide donw</title>
+  <style>
+   .slideup{
+     display: none;
+     width: 100%;
+     height: 40px;
+     background: blue;
+     position: absolute;
+    bottom: 0px;
+    transition: all 3s  ease-in-out;
+   }
+   span.x {
+    position: relative;
+    bottom: 11px;
+    left: 42%;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <h2>Slide donw</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae labore eum obcaecati, exercitationem dolor cumque. Asperiores repudiandae, beatae, voluptatum totam blanditiis atque, sequi ullam ducimus excepturi dicta minima architecto! Doloremque laudantium, expedita et porro earum amet ipsam error doloribus natus. Magni exercitationem id animi commodi cum labore laboriosam quos modi?</p>
+
+  <div class="slideup">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed inventore iusto voluptatem provident. Saepe, beatae. Quam nihil odio beatae.<span class="x">X</span></p>
+    
+  </div>
+  <script>
+    let item = document.querySelector('.slideup');
+    let xDugme = document.querySelector('span.x');
+   
+//PRIKAZ BLOKA NAKON 3 S
+   let interval = setInterval(()=>{
+      item.style.display = "block";
+    },3000)
+    
+
+    //FUNKCIJA ZA ZATVARANJE BLOKA SA CISCENJEM SETINTERAVALA
+  xDugme.addEventListener('click', ()=>{
+    item.style.display = "none";
+    clearInterval(interval);
+  })
+    </script>
+</body>
+</html>
